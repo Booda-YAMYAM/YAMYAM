@@ -6,6 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {WebView} from 'react-native-webview';
 import {Home} from './components';
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,9 @@ const DetailScreen = () => {
 };
 
 function App() {
+  React.useEffect(() => {
+    SplashScreen.hide();
+  });
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
