@@ -4,16 +4,14 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {WebView} from 'react-native-webview';
+import {Home} from './components';
 
 const Stack = createNativeStackNavigator();
 
-const HomeScreen = () => {
-  return (
-    <View>
-      <Text>Home</Text>
-    </View>
-  );
-};
+// const HomeScreen = () => {
+//   return <WebView source={{uri: 'https://map.kakao.com/'}} />;
+// };
 
 const DetailScreen = () => {
   return (
@@ -27,7 +25,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
