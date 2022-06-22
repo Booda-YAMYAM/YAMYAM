@@ -1,11 +1,10 @@
 // Atoms
 export {RadiusButton} from './atoms/RadiusButton';
+export {BottomButton} from './atoms/BottomButton';
 // Molecules
 
 // Organisms
-
-// Templates
-
+export {BottomSheet} from './organisms/BottomSheet';
 // pages
 
 export {Home} from './pages/Home';
