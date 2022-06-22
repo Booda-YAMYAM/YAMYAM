@@ -60,7 +60,8 @@ export function BottomSheet({modalVisible, setModalVisible}) {
     setOpenTime({open, close});
   };
 
-  console.log(result);
+  // !modalVisible && console.log('modalVisible', tagList, openTime, dist);
+
   return (
     <Modal
       visible={modalVisible}

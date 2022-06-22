@@ -10,23 +10,15 @@ import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createNativeStackNavigator();
 
-const DetailScreen = () => {
-  return (
-    <View>
-      <Text>Detail</Text>
-    </View>
-  );
-};
-
 function App() {
   React.useEffect(() => {
     SplashScreen.hide();
   });
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Login" component={Home} />
-        <Stack.Screen name="Detail" component={DetailScreen} />
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
