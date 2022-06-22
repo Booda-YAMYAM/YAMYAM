@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {View, Text, Image} from 'react-native';
-import {RadiusButton} from '../../../components';
+import {RadiusButton} from '../..';
 import * as S from './style';
 
 export function Login() {
