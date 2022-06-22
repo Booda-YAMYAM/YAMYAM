@@ -18,5 +18,5 @@ export const Background = styled.View`
 export const Overlay = styled.View`
   flex: 1;
   justify-content: flex-end;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0);
 `;
