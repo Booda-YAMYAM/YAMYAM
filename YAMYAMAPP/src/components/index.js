@@ -6,6 +6,7 @@ export {TagBtn} from './atoms/TagBtn';
 // Molecules
 export {FilterMemu} from './molecules/FilterMemu';
 export {OpenTime} from './molecules/OpenTime';
+export {Dist} from './molecules/Dist';
 // Organisms
 export {BSContent} from './organisms/BSContent';
 //Templates

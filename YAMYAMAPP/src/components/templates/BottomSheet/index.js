@@ -17,6 +17,13 @@ export function BottomSheet({modalVisible, setModalVisible}) {
     {text: '편의점', isPress: false},
     {text: '기타', isPress: false},
   ]);
+
+  const [openTime, setOpenTime] = useState({
+    open: 0,
+    close: 0,
+  });
+
+  const [dist, setDist] = useState(0);
   const [result, setResult] = useState(false);
   const {translateY, screenHeight, panResponders, closeBottomSheet} =
     useBottomSheet({
@@ -36,6 +43,10 @@ export function BottomSheet({modalVisible, setModalVisible}) {
     });
   };
 
+  const onSlider = (open, close) => {
+    setOpenTime({open, close});
+  };
+
   return (
     <Modal
       visible={modalVisible}
@@ -51,7 +62,14 @@ export function BottomSheet({modalVisible, setModalVisible}) {
           isResult={result}
           style={{transform: [{translateY: translateY}]}}
           {...panResponders.panHandlers}>
-          <BottomSheet tagList={tagList} onPressTag={onPressTag} />
+          <BSContent
+            tagList={tagList}
+            onPressTag={onPressTag}
+            openTime={openTime}
+            setOpenTime={onSlider}
+            dist={dist}
+            setDist={setDist}
+          />
         </S.Container>
       </S.Overlay>
     </Modal>
