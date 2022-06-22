@@ -23,7 +23,7 @@ export function OpenTime({openTime, setOpenTime}) {
           onValueChange={value => setOpenTime(value)}
           step={1}
         />
-        <Text>Value: {openTime.open}</Text>
+        <Text>마감까지: {openTime.open}</Text>
       </S.SliderContainer>
     </S.Container>
   );

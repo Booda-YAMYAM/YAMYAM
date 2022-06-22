@@ -11,8 +11,7 @@ export function BSContent({
   setOpenTime,
   dist,
   setDist,
-  clear,
-  setClear,
+  setResult,
 }) {
   return (
     <>
@@ -24,7 +23,7 @@ export function BSContent({
         <OpenTime openTime={openTime} setOpenTime={setOpenTime} />
         <Dist dist={dist} setDist={setDist} />
         <S.footer>
-          <Button text={'적용하기'} onPress={onPress} />
+          <Button text={'적용하기'} onPress={setResult} />
         </S.footer>
       </S.Container>
     </>

@@ -60,6 +60,7 @@ export function BottomSheet({modalVisible, setModalVisible}) {
     setOpenTime({open, close});
   };
 
+  console.log(result);
   return (
     <Modal
       visible={modalVisible}
@@ -84,6 +85,7 @@ export function BottomSheet({modalVisible, setModalVisible}) {
             setDist={setDist}
             clear={clear}
             setClear={setClear}
+            setResult={closeBottomSheet}
           />
         </S.Container>
       </S.Overlay>
