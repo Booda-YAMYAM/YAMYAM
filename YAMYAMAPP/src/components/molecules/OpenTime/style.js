@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  height: 30%;
+  height: 20%;
 `;
 
 export const Content = styled.View`
@@ -9,7 +9,7 @@ export const Content = styled.View`
 `;
 
 export const SliderContainer = styled.View`
-  height: 100px;
+  height: 70px;
   width: 90%;
   margin-left: 20px;
   align-items: stretch;

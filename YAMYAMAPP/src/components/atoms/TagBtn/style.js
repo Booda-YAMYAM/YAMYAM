@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
-  width: 30%;
-  height: 20px;
+  width: 20%;
+  height: 25px;
   margin-top: 10px;
+  margin-left: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,5 +15,5 @@ export const Container = styled.TouchableOpacity`
 
 export const Text = styled.Text`
   font-size: 12px;
-  color: ${props => (props.isPress ? 'white' : '#ffe082')};
+  color: ${props => (props.isPress ? 'white' : '#606060')};
 `;
