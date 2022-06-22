@@ -4,10 +4,8 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-// import HomeScreen from './screens/HomeScreen';
-// import DetailScreen from './screens/DetailScreen';
 
-const Stack = createNativeStackNavigator(); // 뒤로가기 앞으로 가기를 위한, 스택
+const Stack = createNativeStackNavigator();
 
 const HomeScreen = () => {
   return (
