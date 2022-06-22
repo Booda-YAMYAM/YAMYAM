@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {FilterMemu, OpenTime, Dist, Title} from '../../../components';
+import {FilterMemu, OpenTime, Dist, Title, Button} from '../../../components';
 import * as S from './style';
 
 export function BSContent({
@@ -11,6 +11,8 @@ export function BSContent({
   setOpenTime,
   dist,
   setDist,
+  clear,
+  setClear,
 }) {
   return (
     <>
@@ -21,6 +23,9 @@ export function BSContent({
         <FilterMemu tagList={tagList} onPressTag={onPressTag} />
         <OpenTime openTime={openTime} setOpenTime={setOpenTime} />
         <Dist dist={dist} setDist={setDist} />
+        <S.footer>
+          <Button text={'적용하기'} onPress={onPress} />
+        </S.footer>
       </S.Container>
     </>
   );

@@ -5,6 +5,19 @@ import {BSContent} from '../../../components';
 import * as S from './style';
 
 export function BottomSheet({modalVisible, setModalVisible}) {
+  const [clear, setClear] = useState([
+    {text: '한식', isPress: false},
+    {text: '중식', isPress: false},
+    {text: '양식', isPress: false},
+    {text: '분식', isPress: false},
+    {text: '아시안', isPress: false},
+    {text: '디저트', isPress: false},
+    {text: '카페', isPress: false},
+    {text: '패스트푸드', isPress: false},
+    {text: '편의점', isPress: false},
+    {text: '기타', isPress: false},
+  ]);
+
   const [tagList, setTagList] = useState([
     {text: '한식', isPress: false},
     {text: '중식', isPress: false},
@@ -69,6 +82,8 @@ export function BottomSheet({modalVisible, setModalVisible}) {
             setOpenTime={onSlider}
             dist={dist}
             setDist={setDist}
+            clear={clear}
+            setClear={setClear}
           />
         </S.Container>
       </S.Overlay>
