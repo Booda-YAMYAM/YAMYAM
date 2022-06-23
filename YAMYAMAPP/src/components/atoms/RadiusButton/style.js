@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
-  width: 70%;
-  height: 25%;
+  width: 200px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
