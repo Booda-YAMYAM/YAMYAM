@@ -20,16 +20,12 @@ export function Login({navigation}) {
       <Title text={'YAMYAM과 함께할 당신은 누구인가요?'} size={'20px'} />
       <S.ButtonContainer>
         <RadiusButton
-          text={'아이로 시작하기'}
-          onPress={async () => {
-            // <View style={[styles.container, styles.horizontal]}>
-            //   <ActivityIndicator size="large" />;
-            // </View>;
-            await wait(2000);
+          text={'저는 아동이에요!'}
+          onPress={() => {
             navigation.navigate('내 주변 식당 찾기');
           }}
         />
-        <RadiusButton text={'사장님으로 시작하기'} onPress={() => {}} />
+        <RadiusButton text={'저는 사장님 이에요!'} onPress={() => {}} />
       </S.ButtonContainer>
       <S.BackButton onPress={() => navigation.navigate('회원가입')}>
         <S.BackButtonText>뒤로가기</S.BackButtonText>

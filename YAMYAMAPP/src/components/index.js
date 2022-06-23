@@ -17,3 +17,4 @@ export {BottomSheet} from './templates/BottomSheet';
 // pages
 export {Home} from './pages/Home';
 export {Login} from './pages/Login';
+export {Start} from './pages/Start';
