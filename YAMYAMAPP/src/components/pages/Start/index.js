@@ -19,6 +19,7 @@ export function Start({navigation}) {
     <>
       {isLoading && (
         <S.LoadingContainer>
+          <Image source={require('../../../assets/images/logo.png')} />
           <View style={[styles.container, styles.horizontal]}>
             <ActivityIndicator size="large" />
           </View>
