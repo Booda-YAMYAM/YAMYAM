@@ -7,6 +7,7 @@ export const Container = styled.View`
 export const BottomContainer = styled.View`
   position: absolute;
   bottom: 0;
+  right: -35%;
   width: 100%;
   height: 20%;
   display: flex;
