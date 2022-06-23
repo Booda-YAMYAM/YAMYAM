@@ -17,20 +17,12 @@ export function Login({navigation}) {
   return (
     <S.Container>
       <S.Logo source={require('../../../assets/images/logo.png')} />
-      <Title text={'YAMYAM과 함께할 당신은 누구인가요?'} />
       <S.ButtonContainer>
-        <RadiusButton
-          text={'아이로 시작하기'}
-          onPress={async () => {
-            // <View style={[styles.container, styles.horizontal]}>
-            //   <ActivityIndicator size="large" />;
-            // </View>;
-            await wait(2000);
-            navigation.navigate('내 주변 식당 찾기');
-          }}
-        />
-        <RadiusButton text={'사장님으로 시작하기'} onPress={() => {}} />
+        <InputText placeholder={'이메일'} />
+        <InputText placeholder={'이메일'} />
       </S.ButtonContainer>
+      <RadiusButton text={'로그인 하기'} onPress={async () => {}} />
+      <Title text={'YAMYAM가 처음이신가요??'} />
       <S.BackButton onPress={() => navigation.navigate('회원가입')}>
         <S.BackButtonText>뒤로가기</S.BackButtonText>
       </S.BackButton>
