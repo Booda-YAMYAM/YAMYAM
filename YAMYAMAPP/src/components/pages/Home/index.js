@@ -4,58 +4,59 @@ import {WebView} from 'react-native-webview';
 import {BottomButton, BottomSheet} from '../..';
 import * as S from './style';
 
-const WebviewContainer = ({handleSetRef, handleEndLoading}) => {
-  const url = 'https://yamyma-webview2-68sp8b10c-booda.vercel.app/#/';
-
-  /** 웹뷰에서 rn으로 값을 보낼때 거치는 함수 */
-  const handleOnMessage = ({nativeEvent: {data}}) => {
-    // data에 웹뷰에서 보낸 값이 들어옵니다.
-    console.log(data);
-  };
-
-  return (
-    <WebView
-      onLoadEnd={handleEndLoading}
-      onMessage={handleOnMessage}
-      ref={handleSetRef}
-      source={{url}}
-    />
-  );
-};
-
 export function Home() {
   const [modalVisible, setModalVisible] = useState(false);
-  // 웹뷰와 rn과의 소통은 아래의 ref 값을 이용하여 이루어집니다.
-  let webviewRef = useRef();
+
+  const url = 'https://yamyma-webview2.vercel.app/#/';
+  // const url = 'http://localhost:3000/#/';
+  let webRef = useRef(null);
 
   /** 웹뷰 ref */
   const handleSetRef = _ref => {
-    webviewRef = _ref;
+    webRef = _ref;
   };
 
-  /** webview 로딩 완료시 */
-  const handleEndLoading = e => {
-    console.log('handleEndLoading');
-    /** rn에서 웹뷰로 정보를 보내는 메소드 */
-    webviewRef.postMessage('로딩 완료시 webview로 정보를 보내는 곳');
+  /* native -> web */
+  // const native_to_web = () => {
+  //   console.log(webRef.postMessage(JSON.stringify({changeText: 'World'}), '*'));
+  // };
+
+  const sendData = result => {
+    console.log(webRef.postMessage(JSON.stringify(result), '*'));
+  };
+
+  const errorHandler = ({nativeEvent}) =>
+    console.warn('WebView error: ', nativeEvent);
+
+  /* web -> native */
+  const web_to_native = e => {
+    console.log(e.nativeEvent.data);
   };
 
   return (
     <S.Container>
-      <WebviewContainer
-        webviewRef={webviewRef}
-        handleSetRef={handleSetRef}
-        handleEndLoading={handleEndLoading}
+      <WebView
+        ref={handleSetRef}
+        source={{uri: url}}
+        javaScriptEnabled={true}
+        onError={errorHandler}
+        onMessage={event => {
+          console.log('받은 데이터(React) : ' + event.nativeEvent.data);
+        }}
       />
       <S.BottomContainer>
         <BottomButton
           text="필터 설정하기"
-          onPress={() => setModalVisible(true)}
+          onPress={() => {
+            // sendData('korea');
+            setModalVisible(true);
+          }}
         />
       </S.BottomContainer>
       <BottomSheet
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
+        sendData={sendData}
       />
     </S.Container>
   );

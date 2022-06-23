@@ -17,7 +17,7 @@ export function Login({navigation}) {
   return (
     <S.Container>
       <S.Logo source={require('../../../assets/images/logo.png')} />
-      <Title text={'YAMYAM과 함께할 당신은 누구인가요?'} />
+      <Title text={'YAMYAM과 함께할 당신은 누구인가요?'} size={'20px'} />
       <S.ButtonContainer>
         <RadiusButton
           text={'아이로 시작하기'}

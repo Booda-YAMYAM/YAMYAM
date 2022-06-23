@@ -4,7 +4,7 @@ import {useBottomSheet} from '../../../hooks/useBottomSheet';
 import {BSContent} from '../../../components';
 import * as S from './style';
 
-export function BottomSheet({modalVisible, setModalVisible}) {
+export function BottomSheet({modalVisible, setModalVisible, sendData}) {
   const [clear, setClear] = useState([
     {text: '한식', isPress: false},
     {text: '중식', isPress: false},
@@ -31,10 +31,7 @@ export function BottomSheet({modalVisible, setModalVisible}) {
     {text: '기타', isPress: false},
   ]);
 
-  const [openTime, setOpenTime] = useState({
-    open: 0,
-    close: 0,
-  });
+  const [openTime, setOpenTime] = useState(0);
 
   const [dist, setDist] = useState(0);
   const [result, setResult] = useState(false);
@@ -60,7 +57,18 @@ export function BottomSheet({modalVisible, setModalVisible}) {
     setOpenTime({open, close});
   };
 
-  // !modalVisible && console.log('modalVisible', tagList, openTime, dist);
+  const makeResult = () => {
+    return {
+      tagList: tagList
+        .filter(item => item.isPress)
+        .map(item => item.text)
+        .join(','),
+      openTime: openTime.open.toString(),
+      dist: dist.toString(),
+    };
+  };
+
+  // !modalVisible && sendData();
 
   return (
     <Modal
@@ -86,7 +94,11 @@ export function BottomSheet({modalVisible, setModalVisible}) {
             setDist={setDist}
             clear={clear}
             setClear={setClear}
-            setResult={closeBottomSheet}
+            setResult={() => {
+              sendData(makeResult());
+              console.log(makeResult());
+              closeBottomSheet;
+            }}
           />
         </S.Container>
       </S.Overlay>
