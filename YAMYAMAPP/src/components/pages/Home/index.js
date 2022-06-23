@@ -45,13 +45,15 @@ export function Home() {
         }}
       />
       <S.BottomContainer>
-        <BottomButton
-          text="필터 설정하기"
-          onPress={() => {
-            // sendData('korea');
-            setModalVisible(true);
-          }}
-        />
+        {!modalVisible && (
+          <BottomButton
+            text="필터 설정하기"
+            onPress={() => {
+              // sendData('korea');
+              setModalVisible(true);
+            }}
+          />
+        )}
       </S.BottomContainer>
       <BottomSheet
         modalVisible={modalVisible}
