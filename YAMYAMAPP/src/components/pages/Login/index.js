@@ -14,7 +14,9 @@ export function Login({navigation}) {
         <RadiusButton
           text="아이로 시작하기"
           onPress={async () => {
-            // 로딩 스피너 넣을곳
+            // <View style={[styles.container, styles.horizontal]}>
+            //   <ActivityIndicator size="large" />;
+            // </View>;
             await wait(2000);
             navigation.navigate('내 주변 식당 찾기');
           }}
@@ -24,3 +26,15 @@ export function Login({navigation}) {
     </S.Container>
   );
 }
+// const styles = StyleSheet.create({
+//   container: {
+//     position: 'absolute',
+//     flex: 1,
+//     justifyContent: 'center',
+//   },
+//   horizontal: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-around',
+//     padding: 10,
+//   },
+// });
