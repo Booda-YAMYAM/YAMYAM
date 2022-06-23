@@ -63,8 +63,8 @@ export function BottomSheet({modalVisible, setModalVisible, sendData}) {
         .filter(item => item.isPress)
         .map(item => item.text)
         .join(','),
-      openTime: openTime.open.toString(),
-      dist: dist.toString(),
+      openTime: openTime.open?.toString(),
+      dist: dist?.toString(),
     };
   };
 
