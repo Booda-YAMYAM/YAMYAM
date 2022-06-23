@@ -18,7 +18,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="내 주변 식당 찾기" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

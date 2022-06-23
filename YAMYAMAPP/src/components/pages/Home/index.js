@@ -8,7 +8,9 @@ export function Home() {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <S.Container>
-      <WebView source={{uri: 'https://map.kakao.com/'}} />
+      <WebView
+        source={{uri: 'https://yamyma-webview2-68sp8b10c-booda.vercel.app/#/'}}
+      />
       <S.BottomContainer>
         <BottomButton
           text="필터 설정하기"
