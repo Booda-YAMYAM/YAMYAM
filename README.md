@@ -93,7 +93,7 @@
 - Clone Repository
 
   ```bash
-  git clone https://github.com/Booda-YAMYAM/YAMYMA_WEBVIEW.git
+  git clone https://github.com/Booda-YAMYAM/YAMYAM.git
   ```
 
 <br>
